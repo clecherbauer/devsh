@@ -60,7 +60,7 @@ function setup() {
 
 _setup() {
   setup_pre_hook
-  wget -q -O - https://raw.githubusercontent.com/clecherbauer/docker-devkit/master/setup.sh | bash
+  wget -q -O - https://gitlab.com/clecherbauer/tools/docker-devkit/-/raw/master/linux/setup.sh | bash
   setup_post_hook
 }
 
