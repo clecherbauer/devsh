@@ -9,7 +9,7 @@ function user_exists() {
 
 function modify_or_create_user() {
     if [ -z "$1" ] || [ -z "$2" ]; then
-        print "Please set USERNAME as \$1 and UID as $\2!"
+        echo "Please set USERNAME as \$1 and UID as $\2!"
         exit 1
     fi
     local USERNAME="$1"
@@ -32,7 +32,7 @@ function modify_or_create_user() {
 
 function modify_user() {
     if [ -z "$1" ] || [ -z "$2" ]; then
-        print "Please set USERNAME as \$1 and UID as $\2!"
+        echo "Please set USERNAME as \$1 and UID as $\2!"
         exit 1
     fi
     local USERNAME=$1
@@ -73,7 +73,7 @@ USER_ID_TO_SWITCH="$2"
 if [ ! -z "$USER_NAME_TO_SWITCH" ] && [ -z "$USER_ID_TO_SWITCH" ]; then
     export_uid_host_from_dotenv
     if [ -z "$UID_HOST" ]; then
-        print "Variable UID_HOST not present, please check your .env!"
+        echo "Variable UID_HOST not present, please check your .env!"
         exit 1
     fi
     modify_or_create_user "$USER_NAME_TO_SWITCH" "$UID_HOST"
